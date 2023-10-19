@@ -18,7 +18,7 @@ public class ApplicationConf implements WebMvcConfigurer {
         http
                 .csrf()
                 .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
-        //        http
+//                http
 //                .csrf().disable();
         return http.build();
     }
