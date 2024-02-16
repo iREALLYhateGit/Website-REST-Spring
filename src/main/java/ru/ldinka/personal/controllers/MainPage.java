@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import ru.ldinka.personal.repositories.AccountRep;
 
 @Controller
@@ -19,12 +18,10 @@ public class MainPage {
         model.addAttribute("accounts", rep.findAll());
         HttpSession session = request.getSession();
         counter = (Integer) session.getAttribute("counter");
-        if(counter == null) {
+        if(counter == null)
             counter = 1;
-        }
-        else{
+        else
             counter++;
-        }
         session.setAttribute("counter",counter);
         model.addAttribute("counter", counter);
         return "main_page";

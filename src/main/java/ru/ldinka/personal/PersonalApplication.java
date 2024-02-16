@@ -17,7 +17,7 @@ public class PersonalApplication {
     public static void main(String[] args) {
         SpringApplication.run(PersonalApplication.class, args);
         logger.log(Level.FINE, "All is fine");
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(new File("output.txt")))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("output.txt"))) {
             writer.write("Fine");
         } catch (IOException ioException){
             logger.log(Level.WARNING, "IoException");

@@ -15,5 +15,4 @@ public class Books {
     private String name;
 
     private String author;
-    private Date lastPage;
 }

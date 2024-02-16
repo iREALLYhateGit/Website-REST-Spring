@@ -5,20 +5,18 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Signing in</title>
+    <title>Signing Up</title>
     <link href="/static/css/pop.css" type = "text/css" rel = "stylesheet">
 
 </head>
 <body>
 <div class="container">
-    <form action="/signIn/registerAccount" method="post">
+    <form action="/signUp/verifyAccount" method="post">
         <p>Welcome</p>
         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
         <input name="email" placeholder="email"><br>
-        <input name="password" type="password" placeholder="password"><br>
-        <input type="submit" value="Sign in"><br>
-        <a href="#">Forgot password?</a>
-        <a href="/signUp"> Still don't have an account?</a>
+        <input type="submit" value="Create Account"><br>
+        <a href="/signIn">Already have an account?</a>
     </form>
 
     <div class="drops">

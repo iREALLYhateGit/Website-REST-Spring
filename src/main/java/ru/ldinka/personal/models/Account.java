@@ -1,25 +1,33 @@
 package ru.ldinka.personal.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.lang.NonNull;
+import org.springframework.validation.annotation.Validated;
+
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter
-@Setter
 @Entity
 public class Account {
+
+    public Account(@NonNull String email, @NonNull String password){
+        this.email = email;
+        this.password = password;
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    //@NonNull
-    private String name;
-    //@NonNull
+
+    @NotBlank(message = "action")
+    @Email(message = "Not right")
+    @Column
+    private String email;
+
+    @NotBlank
     private String password;
 }
